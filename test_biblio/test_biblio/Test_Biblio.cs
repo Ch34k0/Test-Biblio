@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace test_biblio
 {
-    public class Class1
+    public class Test_Biblio
     {
     }
 }
