@@ -15,21 +15,19 @@ namespace loesung
             var oben = Eingabe_Ober(ober);
             var zahlen = EingabeZahlen(unten, oben);
             var zahlenfb = Verarbeitung(zahlen, unten, oben);
-            var ergebnis = Ausgabe(zahlenfb, unten);
+            //var ergebnis = Ausgabe(zahlenfb, unten);
         }
 
         public static int Eingabe_Unten(int unter)
         {
-            Console.Write("Untergrenze = ");
-            unter = unter;
+            Console.Write("Untergrenze = ");            
             unter = EingabeText(unter);
             return unter;
         }
 
         public static int Eingabe_Ober(int ober)
         {
-            Console.Write("Obergrenze = ");
-            ober = ober;
+            Console.Write("Obergrenze = ");            
             ober = EingabeText(ober);
             return ober;
         }
@@ -75,15 +73,15 @@ namespace loesung
             return zahlenfb;
         }
 
-        public static Dictionary<int, string> Ausgabe(Dictionary<int, string> zahlenfb, int unter)
-        {
-            var ergebnis = new Dictionary<int, string>();
-            for (int zahl = unter; zahl < zahlenfb.Count; zahl++)
-            {
-                Console.WriteLine(zahlenfb[zahl]);
-            }
-            Console.Read();
-            return ergebnis;
-        }
+        //public static Dictionary<int, string> Ausgabe(Dictionary<int, string> zahlenfb, int unter)
+        //{
+        //    var ergebnis = new Dictionary<int, string>();
+        //    for (int zahl = unter; zahl < zahlenfb.Count; zahl++)
+        //    {
+        //        Console.WriteLine(zahlenfb[zahl]);
+        //    }
+        //    Console.Read();
+        //    return ergebnis;
+        //}
     }
 }

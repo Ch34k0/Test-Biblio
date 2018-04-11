@@ -43,7 +43,6 @@ namespace testen
         [Test, Category("Akzeptanztest")]
         public void Verarbeitung()
         {
-
             var dick = Loesung.EingabeZahlen(0, 17);
 
             var dunn = new Dictionary<int, string>();
@@ -76,15 +75,6 @@ namespace testen
                 Assert.AreEqual(dunn[schluss], ergebnis[schluss]);
             }
 
-        }
-
-
-        //[Test, Category("Akzeptanztest")]
-        //public void Ausgabe()
-        //{
-
-        //    var ergebnis = Loesung.Ausgabe(zahlenfb, 5);
-        //    Assert.AreEqual(new[] { 3, 4, 5 }, ergebnis.ToArray());
-        //}
+        }        
     }
 }
