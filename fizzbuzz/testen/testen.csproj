@@ -56,6 +56,10 @@
       <Project>{7415d13c-6232-4448-9ced-ad7796776852}</Project>
       <Name>fizzbuzz</Name>
     </ProjectReference>
+    <ProjectReference Include="..\loesung\loesung.csproj">
+      <Project>{375a0e01-30ff-4fee-ba51-451caa3aba1c}</Project>
+      <Name>loesung</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

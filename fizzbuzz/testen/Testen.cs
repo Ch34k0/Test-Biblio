@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using fizzbuzz;
+using loesung;
 using NUnit.Framework;
 
 namespace testen
@@ -11,40 +12,40 @@ namespace testen
     [TestFixture]
     public class Testen
     {
-        [Test, Category("Akzeptanztest")]
-        public void Pro()
-        {
-            Program.Programm(0, 9);
-            Assert.Pass();
-        }
+        //[Test, Category("Akzeptanztest")]
+        //public void Ganzes_Programm()
+        //{
+        //    Loesung.Durchlauf();
+        //    Assert.Pass();
+        //}
 
         [Test, Category("Akzeptanztest")]
         public void Eingabe()
         {
-            var ergebnis = Program.EingabeZahlen(0, 9);
-            Assert.AreEqual(9, ergebnis.Count());
-            
+            var ergebnis = Loesung.EingabeZahlen(0, 17);
+            Assert.AreEqual(17, ergebnis.Count());
         }
 
-        [Test, Category("Akzeptanztest")]
-        public void EingabeU()
-        {
-            var ergU = Program.Eingabe_Unten(0);
-            Assert.AreEqual(0, ergU);
-        }
+        //[Test, Category("Akzeptanztest")]
+        //public void EingabeU()
+        //{
+        //    var ergU = Loesung.Eingabe_Unten(0);
+        //    Assert.AreEqual(0, ergU);
+        //}
 
-        [Test, Category("Akzeptanztest")]
-        public void EingabeO()
-        {
-            var ergO = Program.Eingabe_Ober(9);
-            Assert.AreEqual(9, ergO);
-        }
+        //[Test, Category("Akzeptanztest")]
+        //public void EingabeO()
+        //{
+        //    var ergO = Loesung.Eingabe_Ober(9);
+        //    Assert.AreEqual(9, ergO);
+        //}
 
         [Test, Category("Akzeptanztest")]
         public void Verarbeitung()
         {
-            var dick = Program.EingabeZahlen(0,17);
-            
+
+            var dick = Loesung.EingabeZahlen(0, 17);
+
             var dunn = new Dictionary<int, string>();
             dunn.Add(0, "fizzbuzz");
             dunn.Add(1, "1");
@@ -64,12 +65,12 @@ namespace testen
             dunn.Add(15, "fizzbuzz");
             dunn.Add(16, "16");
             dunn.Add(17, "17");
-            var ergebnis = Program.Verarbeitung(dick);
+            var ergebnis = Loesung.Verarbeitung(dick, 0, 17);
 
             Assert.AreEqual(dunn.Count, ergebnis.Count);
             //var dick = new List<int>();
             //var dunn = new Dictionary<int, string>();
-            //var ergebnis = Program.Verarbeitung(dick);
+            //var ergebnis = Loesung.Verarbeitung(dick);
             foreach (var schluss in dunn.Keys)
             {
                 Assert.AreEqual(dunn[schluss], ergebnis[schluss]);
@@ -82,7 +83,7 @@ namespace testen
         //public void Ausgabe()
         //{
 
-        //    var ergebnis = Program.Ausgabe(zahlenfb, 5);
+        //    var ergebnis = Loesung.Ausgabe(zahlenfb, 5);
         //    Assert.AreEqual(new[] { 3, 4, 5 }, ergebnis.ToArray());
         //}
     }
