@@ -17,8 +17,8 @@ namespace fizzbuzz
             var unten = Eingabe_Unten(unter);
             var oben = Eingabe_Ober(ober);
             var zahlen = EingabeZahlen(unten, oben);
-            var zahlenfb = Verarbeitung(zahlen);
-            var ergebnis = Ausgabe(zahlenfb, unter);           
+            var zahlenfb = Verarbeitung(zahlen,unten,oben);
+            var ergebnis = Ausgabe(zahlenfb, unten);           
         }
 
         internal static void Programm(int unter,int ober)
@@ -30,7 +30,7 @@ namespace fizzbuzz
         {
             Console.Write("Untergrenze = ");
             unter = unter;
-            //unter = Convert.ToInt32(Console.ReadLine());
+            unter = Convert.ToInt32(Console.ReadLine());
             return unter;
         }
 
@@ -38,7 +38,7 @@ namespace fizzbuzz
         {
             Console.Write("Obergrenze = ");
             ober = ober;
-            //ober = Convert.ToInt32(Console.ReadLine());
+            ober = Convert.ToInt32(Console.ReadLine());
             return ober;
         }
 
@@ -95,19 +95,35 @@ namespace fizzbuzz
             return zahlen;
         }
 
-        internal static Dictionary<int, string> Verarbeitung(List<int> zahlen)
+        internal static Dictionary<int, string> Verarbeitung(List<int> zahlen,int unten,int oben)
         {
             var zahlenfb = new Dictionary<int, string>();
-            for (int zahl = 0; zahl <= zahlen.Count; zahl++)
+            for (int zahl = unten; zahl <= oben+unten; zahl++)
             {
-                if (zahl % 3 == 0 && zahl % 5 == 0)
+                //if (zahl % 3 == 0 && zahl % 5 == 0 && zahl % 2 == 0)
+                //{
+                //    zahlenfb.Add(zahl, "jazzfizzbuzz");
+                //}
+                if (zahl % 3 == 0 && zahl % 5 == 0 )
                 {
                     zahlenfb.Add(zahl, "fizzbuzz");
                 }
+                //else if (zahl % 3 == 0 &&  zahl % 2 == 0)
+                //{
+                //    zahlenfb.Add(zahl, "jazzfizz");
+                //}
+                //else if ( zahl % 5 == 0 && zahl % 2 == 0)
+                //{
+                //    zahlenfb.Add(zahl, "jazzbuzz");
+                //}
                 else if (zahl % 3 == 0)
                 {
                     zahlenfb.Add(zahl, "fizz");
                 }
+                //else if (zahl % 2 == 0)
+                //{
+                //    zahlenfb.Add(zahl, "jazz");
+                //}
                 else if (zahl % 5 == 0)
                 {
                     zahlenfb.Add(zahl, "buzz");
