@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,60 +9,72 @@ namespace die_spinnen_doch
 {
     public class Programm
     {
-        public static string Main(string y)
+        public static string Main(string dezimal_zahl)
         {
-            int x, i = 0, k = 6;
-            string roman = "", ziel = "";
-            bool z;
+            var ergebnis = Uebersetzen(dezimal_zahl);
+            return ergebnis;
+        }
 
+        public static string Uebersetzen(string dezimal_zahl)
+        {
+            int position=0;
+            bool richtung=false;
+            string temporaer=String.Empty;
+            
             Dictionary<int, string> romantext = new Dictionary<int, string>()
             { {  0, "M" }, { 1, "D" }, { 2, "C" }, { 3, "L" }, { 4, "X" },{ 5, "V" },{ 6, "I" } };
             Dictionary<int, int> romanzahl = new Dictionary<int, int>()
-            { {  0, 1000 },{ 1, 500 },{ 2, 100 }, { 3, 50 },{ 4, 10 }, { 5, 5 }, { 6, 1 } };
+            { {  0, 1000 },{ 1, 500 },{ 2, 100 }, { 3,50},{ 4,10 }, { 5,5 }, { 6,1 } };
 
-            for (int s = y.Length; s > 0; s--)
+            var ergebnis = Ueberschreiben(dezimal_zahl,  romantext,  romanzahl, position, richtung, temporaer);
+            return ergebnis;
+        }
+        public static string Ueberschreiben(string dezimal_zahl,Dictionary<int,string> romantext,Dictionary<int,int>romanzahl,int position,bool richtung, string temporaer)
+        {
+            string ergebnis="";
+            for (int zeichen = dezimal_zahl.Length; zeichen > 0; zeichen--)
             {
-                x = Convert.ToInt32(y.Substring(s - 1, 1)) * Convert.ToInt32(Math.Pow(10, y.Length - s));
-                while (x > 0)
+                position = Convert.ToInt32(dezimal_zahl.Substring(zeichen - 1, 1)) * Convert.ToInt32(Math.Pow(10, dezimal_zahl.Length - zeichen));
+                while (position > 0)
                 {
-                    z = false;
+                    richtung = false;
 
-                    for (k = 6; k > 0; k--)
+                    for (int k = 6; k > 0; k--)
                     {
 
-                        if (romanzahl[k] - x > 0)
+                        if (romanzahl[k] - position > 0)
                         {
-                            if ((romanzahl[k] - x) == Convert.ToInt32(Math.Pow(10, y.Length - s)))
+                            if ((romanzahl[k] - position) == Convert.ToInt32(Math.Pow(10, dezimal_zahl.Length - zeichen)))
                             {
-                                x = romanzahl[k] - x;
-                                roman = romantext[k] + roman;
-                                z = true;
+                                position = romanzahl[k] - position;
+                                temporaer = romantext[k] + temporaer;
+                                richtung = true;
                                 break;
                             }
                         }
                     }
 
-                    for (i = 0; i < 7; i++)
+                    for (int i = 0; i < 7; i++)
                     {
-                        if (x - romanzahl[i] >= 0)
+                        if (position - romanzahl[i] >= 0)
                         {
-                            x = x - romanzahl[i];
-                            if (z == false)
+                            position = position - romanzahl[i];
+                            if (richtung == false)
                             {
-                                roman = roman + romantext[i];
+                                temporaer = temporaer + romantext[i];
                             }
                             else
                             {
-                                roman = romantext[i] + roman;
+                                temporaer = romantext[i] + temporaer;
                             }
                             break;
                         }
                     }
                 }
-                ziel = roman + ziel;
-                roman = "";
+                ergebnis = temporaer + ergebnis;
+                temporaer = "";
             }
-            return ziel;
+            return ergebnis;
         }
     }
 }

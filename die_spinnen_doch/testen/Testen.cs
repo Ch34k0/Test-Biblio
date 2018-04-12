@@ -25,6 +25,7 @@ namespace testen
             Assert.AreEqual(Programm.Main("9"), "IX");
             Assert.AreEqual(Programm.Main("10"), "X");
             Assert.AreEqual(Programm.Main("19"), "XIX");
+            Assert.AreEqual(Programm.Main("69"), "LXIX");
             Assert.AreEqual(Programm.Main("42"), "XLII");
             Assert.AreEqual(Programm.Main("99"), "XCIX");
             Assert.AreEqual(Programm.Main("2018"), "MMXVIII");
