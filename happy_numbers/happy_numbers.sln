@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "happy_numbers", "happy_numb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "klasse_mit_Aufbau", "klasse_mit_Aufbau\klasse_mit_Aufbau.csproj", "{AA0244D6-0DB0-4CAF-B6B8-C62AEFC247AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teste_froehlichkeit", "teste_froehlichkeit\teste_froehlichkeit.csproj", "{A2089F6B-3A23-48C2-B90E-5B051AC5D93F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AA0244D6-0DB0-4CAF-B6B8-C62AEFC247AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA0244D6-0DB0-4CAF-B6B8-C62AEFC247AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA0244D6-0DB0-4CAF-B6B8-C62AEFC247AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2089F6B-3A23-48C2-B90E-5B051AC5D93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2089F6B-3A23-48C2-B90E-5B051AC5D93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2089F6B-3A23-48C2-B90E-5B051AC5D93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2089F6B-3A23-48C2-B90E-5B051AC5D93F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

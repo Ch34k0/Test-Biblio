@@ -16,13 +16,13 @@ namespace klasse_mit_Aufbau
             Ausgabe(Liste);
         }
 
-        internal static List<string> Liste_schreiben(int ursprungszahl)
+        public static List<string> Liste_schreiben(int ursprungszahl)
         {
             List<string> Liste = Schleife(ursprungszahl);
             return Liste;
         }
-        
-        internal static List<string> Schleife(int ursprungszahl)
+
+        public static List<string> Schleife(int ursprungszahl)
         {
             List<string> Liste = new List<string>();
             int einzelpotenz, summe = 0;
@@ -40,7 +40,7 @@ namespace klasse_mit_Aufbau
             return Liste;
         }
 
-        internal static void Ergebnis(List<string> Liste)
+        public static void Ergebnis(List<string> Liste)
         {
             if (Liste[Liste.Count-1] == "1")
             {
