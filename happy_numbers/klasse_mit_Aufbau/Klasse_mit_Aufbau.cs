@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace klasse_mit_Aufbau
+{
+    public class Klasse_mit_Aufbau
+    {
+
+        public static void Haupt(int ursprungszahl)
+        {
+            var Liste = Liste_schreiben(ursprungszahl);
+            Ergebnis(Liste);
+            Ausgabe(Liste);
+        }
+
+        internal static List<string> Liste_schreiben(int ursprungszahl)
+        {
+            List<string> Liste = Schleife(ursprungszahl);
+            return Liste;
+        }
+        
+        internal static List<string> Schleife(int ursprungszahl)
+        {
+            List<string> Liste = new List<string>();
+            int einzelpotenz, summe = 0;
+            while (ursprungszahl.ToString().Length > 1)
+            {
+                for (int i = 0; i < ursprungszahl.ToString().Length; i++)
+                {
+                    einzelpotenz = Convert.ToInt32(Math.Pow(Convert.ToInt32(ursprungszahl.ToString().Substring(i, 1)), 2));
+                    summe += einzelpotenz;
+                }
+                ursprungszahl = summe;
+                Liste.Add(ursprungszahl.ToString());
+                summe = 0;
+            }
+            return Liste;
+        }
+
+        internal static void Ergebnis(List<string> Liste)
+        {
+            if (Liste[Liste.Count-1] == "1")
+            {
+                Liste.Add("Das ist eine fröhliche Zahl :D");
+            }
+            else if (Liste[Liste.Count-1] == "4")
+            {
+                Liste.Add("Das ist eine traurige Zahl :C");
+            }
+            else
+            {
+                Liste.Add("Dieser Zahl ist alles egal :|");
+            }
+        }
+
+        public static void Ausgabe(List<string> Liste)
+        {
+            for (int i = 0; i < Liste.Count; i++)
+            {
+                Console.WriteLine(Liste[i]);
+            }
+        }
+    }
+}
