@@ -25,17 +25,17 @@ namespace klasse_mit_Aufbau
         public static List<string> Schleife(int ursprungszahl)
         {
             List<string> Liste = new List<string>();
-            int einzelpotenz, summe = 0;
+            int einzelpotenz, summe;
             while (ursprungszahl.ToString().Length > 1)
             {
+                summe = 0;
                 for (int i = 0; i < ursprungszahl.ToString().Length; i++)
                 {
                     einzelpotenz = Convert.ToInt32(Math.Pow(Convert.ToInt32(ursprungszahl.ToString().Substring(i, 1)), 2));
                     summe += einzelpotenz;
                 }
                 ursprungszahl = summe;
-                Liste.Add(ursprungszahl.ToString());
-                summe = 0;
+                Liste.Add(ursprungszahl.ToString());                
             }
             return Liste;
         }
