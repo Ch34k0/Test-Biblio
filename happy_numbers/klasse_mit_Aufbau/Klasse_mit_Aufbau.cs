@@ -26,7 +26,7 @@ namespace klasse_mit_Aufbau
         {
             List<string> Liste = new List<string>();
             int einzelpotenz, summe;
-            while (ursprungszahl.ToString().Length > 1)
+            while (ursprungszahl != 1&& ursprungszahl!= 4)
             {
                 summe = 0;
                 for (int i = 0; i < ursprungszahl.ToString().Length; i++)
