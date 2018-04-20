@@ -13,8 +13,7 @@ namespace testen
     {        
         [Test]
         public static void Test()
-        {
-            
+        {            
             Assert.AreEqual(Programm.Main("1"), "I");
             Assert.AreEqual(Programm.Main("2"), "II");
             Assert.AreEqual(Programm.Main("3"), "III");
@@ -30,6 +29,7 @@ namespace testen
             Assert.AreEqual(Programm.Main("42"), "XLII");
             Assert.AreEqual(Programm.Main("99"), "XCIX");
             Assert.AreEqual(Programm.Main("2018"), "MMXVIII");
+            Assert.AreEqual(Programm.Main("3001"), "MMMI");
         }
     }
 }

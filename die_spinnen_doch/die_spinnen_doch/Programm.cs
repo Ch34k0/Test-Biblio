@@ -13,16 +13,22 @@ namespace die_spinnen_doch
         {
             //dezimal_zahl = Reverse(dezimal_zahl);
             var array_zahl = Arrayisieren(Reverse(dezimal_zahl));             
-            string ende = Zusammenfuehren(array_zahl, String.Empty);
+            string ende = Zusammenfuehren(array_zahl, string.Empty);
             return ende;
         }
 
         public static string[] Arrayisieren(string dezimal_zahl)
         {
-            
+
             string[] ergebnis = Zahl_Teilen(dezimal_zahl);
             ergebnis = Position_bestimmen(ergebnis);
             return ergebnis;
+        }
+        public static string Reverse(string dezimal_zahl)
+        {
+            char[] charArray = dezimal_zahl.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
 
         public static string[] Zahl_Teilen(string dezimal_zahl)
@@ -35,12 +41,7 @@ namespace die_spinnen_doch
             return ergebnis;
         }
 
-        public static string Reverse(string dezimal_zahl)
-        {
-            char[] charArray = dezimal_zahl.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
-        }
+        
 
         public static string[] Position_bestimmen(string[] array_zahl)
         {
@@ -54,40 +55,31 @@ namespace die_spinnen_doch
         }
 
         public static string Uebersetzen_Einer(string array)
-        {
-            string text = String.Empty;
+        {            
             string[] romantext = new string[]
-            {"", "I","II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-            text = romantext[Convert.ToInt32(array)];
-
-            return text;
+            {"", "I","II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};            
+            return romantext[Convert.ToInt32(array)];
         }
 
         public static string Uebersetzen_Zehner(string array)
         {
-            string text = String.Empty;
             string[] romantext = new string[]
             {"", "X","XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-            text = romantext[Convert.ToInt32(array)];
-            return text;
+            return romantext[Convert.ToInt32(array)];
         }
 
         public static string Uebersetzen_Hunderter(string array)
         {
-            string text = String.Empty;
             string[] romantext = new string[]
             {"", "C","CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "DM"};
-            text = romantext[Convert.ToInt32(array)];
-            return text;
+            return romantext[Convert.ToInt32(array)];
         }
 
         public static string Uebersetzen_Tausender(string array)
         {
-            string text = String.Empty;
             string[] romantext = new string[]
             {"", "M","MM", "MMM"};
-            text = romantext[Convert.ToInt32(array)];
-            return text;
+            return romantext[Convert.ToInt32(array)];
         }
 
 
